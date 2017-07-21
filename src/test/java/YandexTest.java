@@ -92,9 +92,10 @@ public class YandexTest {
                 .resizeField()
                 .pressSaveButton()
                 .waitForAutoSaveStatus();
-        WebElement web = driver.findElement(ComposeEmailPage.SENT_NOTIFICATION_LOCATOR);
-        Assert.assertTrue(web.isDisplayed(), "Email not sended");
-        new ComposeEmailPage(driver).sendTheEmail();
+         new ComposeEmailPage(driver)
+				.sendTheEmail();
+		 WebElement web = driver.findElement(ComposeEmailPage.SENT_NOTIFICATION_LOCATOR);
+         Assert.assertTrue(web.isDisplayed(), "Email not sended");
     }
 
     @Test(description = "Verify, that the mail is in ‘Sent’ folder.")
