@@ -92,6 +92,8 @@ public class YandexTest {
                 .resizeField()
                 .pressSaveButton()
                 .waitForAutoSaveStatus();
+        WebElement web = driver.findElement(ComposeEmailPage.SENT_NOTIFICATION_LOCATOR);
+        Assert.assertTrue(web.isDisplayed(), "Email not sended");
         new ComposeEmailPage(driver).sendTheEmail();
     }
 
